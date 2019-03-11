@@ -44,7 +44,7 @@ BslDictionary class >> uniqueInstance: anObject [
 ]
 
 { #category : #accessing }
-BslDictionary >> lookup: aString [
+BslDictionary >> lookUp: aString [
 	BslTerm new string: aString; lookup
 ]
 
