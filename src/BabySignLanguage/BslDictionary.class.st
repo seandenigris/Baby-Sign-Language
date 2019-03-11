@@ -12,6 +12,12 @@ Class {
 }
 
 { #category : #accessing }
+BslDictionary class >> browseOnline [
+	<script>
+	Smalltalk tools webBrowser openInNewWindow: 'https://www.babysignlanguage.com/dictionary' asUrl
+]
+
+{ #category : #accessing }
 BslDictionary class >> fill [
 	| baseUrl soup container links terms |
 	baseUrl := 'https://www.babysignlanguage.com/dictionary' asUrl.
@@ -33,6 +39,17 @@ BslDictionary class >> study: anObject [
 	study := anObject
 ]
 
+{ #category : #UI }
+BslDictionary class >> uiMenuCommandOn: aBuilder [ 
+	<worldMenu> 
+	
+	(aBuilder item: #'BSL Browser')
+		"parent: #'My Parent';"
+		order: 1; "Be first"
+		action: [ self study browse ]; 
+		icon: Smalltalk ui icons smallLoadProjectIcon
+]
+
 { #category : #accessing }
 BslDictionary class >> uniqueInstance [
 	^ uniqueInstance ifNil: [ uniqueInstance := self new ]
@@ -41,6 +58,26 @@ BslDictionary class >> uniqueInstance [
 { #category : #accessing }
 BslDictionary class >> uniqueInstance: anObject [
 	uniqueInstance := anObject
+]
+
+{ #category : #accessing }
+BslDictionary >> browse [
+
+	| browser |
+	browser := GLMTabulator new.
+	browser row: #Words.
+	browser transmit
+		to: #Words;
+		andShow: [ :a | 
+			a fastList
+				title: 'Words';
+				selectionAct: [ :list | list selection lookUp ] on: $l entitled: 'Look up';
+				selectionAct: [ :list | list selection inspect ] on: $i entitled: 'Inspect';
+				onChangeOfPort: #strongSelection act: [ :list | list selection lookUp ];
+				"filterOn: [:text :each | each string includesSubstring: text ]"
+					enableFilter;
+				helpMessage: 'Enter a filtering request' ].
+	^ browser openOn: self terms
 ]
 
 { #category : #accessing }
