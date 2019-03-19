@@ -14,7 +14,7 @@ Class {
 { #category : #accessing }
 BslDictionary class >> browseOnline [
 	<script>
-	Smalltalk tools webBrowser openInNewWindow: 'https://www.babysignlanguage.com/dictionary' asUrl
+	CwSafari new openInNewWindow: 'https://www.babysignlanguage.com/dictionary' asUrl
 ]
 
 { #category : #accessing }
