@@ -33,10 +33,10 @@ BslTerm >> dictionaryUrl [
 
 { #category : #private }
 BslTerm >> dictionaryWord [
-	^ self alias ifNil: [ self string ]
+	^ self alias ifNil: [ self string copyReplaceAll: ' ' with: '_' ]
 ]
 
-{ #category : #actions }
+{ #category : #testing }
 BslTerm >> hasVideo [
 	^ self videoUrl isNotNil
 ]
@@ -60,7 +60,7 @@ BslTerm >> showDictionary [
 	self showUrl: self dictionaryUrl
 ]
 
-{ #category : #actions }
+{ #category : #private }
 BslTerm >> showUrl: aUrl [
 
 	CwSafari new
