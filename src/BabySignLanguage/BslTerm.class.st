@@ -4,7 +4,8 @@ Class {
 	#instVars : [
 		'string',
 		'videoUrl',
-		'alias'
+		'alias',
+		'dictionaryWord'
 	],
 	#category : #BabySignLanguage
 }
@@ -33,7 +34,13 @@ BslTerm >> dictionaryUrl [
 
 { #category : #private }
 BslTerm >> dictionaryWord [
+	dictionaryWord ifNotNil: [ ^ dictionaryWord ].
 	^ self alias ifNil: [ self string copyReplaceAll: ' ' with: '_' ]
+]
+
+{ #category : #accessing }
+BslTerm >> dictionaryWord: anObject [
+	dictionaryWord := anObject
 ]
 
 { #category : #testing }
