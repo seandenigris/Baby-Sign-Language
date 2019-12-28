@@ -43,6 +43,21 @@ BslTerm >> dictionaryWord: anObject [
 	dictionaryWord := anObject
 ]
 
+{ #category : #'flash cards' }
+BslTerm >> fsAsMorph [
+	^ FsFlashCardMorph new card: self; yourself
+]
+
+{ #category : #'flash cards' }
+BslTerm >> fsQuestion [
+	^ self string
+]
+
+{ #category : #'flash cards' }
+BslTerm >> fsShowAnswer [
+	self showVideo
+]
+
 { #category : #testing }
 BslTerm >> hasVideo [
 	^ self videoUrl isNotNil

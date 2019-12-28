@@ -17,6 +17,16 @@ BslDictionary class >> browseOnline [
 	CwSafari new openInNewWindow: 'https://www.babysignlanguage.com/dictionary' asUrl
 ]
 
+{ #category : #'as yet unclassified' }
+BslDictionary class >> exampleStudyTerms [
+	<sampleInstance>
+	
+	^ BslDictionary study terms collect: [ :e | 
+			FsSmItem new
+				material: e;
+				yourself ].
+]
+
 { #category : #accessing }
 BslDictionary class >> fill [
 	| baseUrl soup container links terms |
