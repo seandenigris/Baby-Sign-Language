@@ -39,6 +39,13 @@ BslDictionary class >> fill [
 	terms do: [ :t | self uniqueInstance terms add: t ] ].
 ]
 
+{ #category : #persistence }
+BslDictionary class >> restoreFrom: aCollection [
+
+	study := aCollection first.
+	uniqueInstance := aCollection second.
+]
+
 { #category : #accessing }
 BslDictionary class >> study [
 	^ study ifNil: [ study := self new ]
