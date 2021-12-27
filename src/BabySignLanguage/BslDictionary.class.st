@@ -103,6 +103,27 @@ BslDictionary >> browse [
 ]
 
 { #category : #accessing }
+BslDictionary >> gtGtSpotterFor: aStep [
+	<gtSearch>
+	^ aStep listProcessor
+		priority: 5;
+		title: 'Terms';
+		allCandidates: [ self terms ];
+		filter: GtFilterSubstrings;
+		candidatesLimit: 7
+]
+
+{ #category : #accessing }
+BslDictionary >> gtViewTermsOn: aView [
+	<gtView>
+	
+	^ aView list
+		title: 'Terms';
+		priority: 50;
+		items: [ self terms ]
+]
+
+{ #category : #accessing }
 BslDictionary >> lookUp: aString [
 	BslTerm new string: aString; lookup
 ]

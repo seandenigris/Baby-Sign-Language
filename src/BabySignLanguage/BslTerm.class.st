@@ -58,6 +58,16 @@ BslTerm >> fsShowAnswer [
 	self showVideo
 ]
 
+{ #category : #accessing }
+BslTerm >> gtActionWebBrowseFor: anAction [
+
+	<gtAction>
+		^ anAction button
+		  icon: BrGlamorousIcons go;
+		  tooltip: 'Browse on web';
+		  action: [ self videoUrl open ]
+]
+
 { #category : #testing }
 BslTerm >> hasVideo [
 	^ self videoUrl isNotNil
