@@ -15,7 +15,7 @@ BaselineOfBabySignLanguage >> baseline: spec [
 			baseline: 'ExternalWebBrowser' with: [
 				spec repository: 'github://seandenigris/Pharo-Web-Browser' ];
 			baseline: 'FlashcardsSt' with: [
-				spec repository: 'gitlab://SeanDeNigris/Flashcards-St' ];
+				spec repository: 'github://seandenigris/Flashcards' ];
 			baseline: 'SimplePersistence' with: [
 				spec repository: 'github://seandenigris/Simple-Persistence' ];
 			baseline: 'Soup' with: [ 

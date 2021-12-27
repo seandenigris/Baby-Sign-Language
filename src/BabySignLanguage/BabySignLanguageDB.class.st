@@ -10,11 +10,6 @@ BabySignLanguageDB class >> backupDirectoryParent [
 	^ FileLocator dynabookData
 ]
 
-{ #category : #'class initialization' }
-BabySignLanguageDB class >> initialize [
-	self setUp.
-]
-
 { #category : #'loading/saving' }
 BabySignLanguageDB class >> repositories [
 
