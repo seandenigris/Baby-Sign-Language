@@ -129,8 +129,15 @@ BslDictionary >> lookUp: aString [
 ]
 
 { #category : #accessing }
+BslDictionary >> printOn: aStream [
+	terms ifNotNil: [ aStream print: terms size ].
+	aStream
+		nextPutAll: ' BSL Terms'
+]
+
+{ #category : #accessing }
 BslDictionary >> terms [
-	^ terms ifNil: [ terms := SortedCollection new ]
+	^ terms ifNil: [ terms := SortedCollection sortBlock: #string ascending ]
 ]
 
 { #category : #accessing }
