@@ -130,8 +130,8 @@ BslTerm >> videoUrl [
 	videoUrl ifNotNil: [ ^ videoUrl ].
 
 	page := Soup fromUrl: self dictionaryUrl.
-	iframe := page findTag: [ :e | e name = #iframe and: [ e src includesSubstring: 'vimeo' ] ].
-	^ iframe ifNotNil: [ videoUrl := iframe src asVimeoUrl queryRemoveAll autoplay: true ]
+	iframe := page findTag: [ :e | e name = #iframe and: [ e id = 'signvideo1' ] ].
+	^ iframe ifNotNil: [ videoUrl := (LlYouTubeVideo fromLinkString: iframe src) url ]
 ]
 
 { #category : #accessing }
