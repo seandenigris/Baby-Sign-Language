@@ -11,13 +11,7 @@ BabySignLanguageDB class >> backupDirectoryParent [
 ]
 
 { #category : #'loading/saving' }
-BabySignLanguageDB class >> repositories [
-
-	^ { BslDictionary study. BslDictionary uniqueInstance }.
-]
-
-{ #category : #'loading/saving' }
-BabySignLanguageDB class >> restoreRepositories: someRepositories [
-
-	BslDictionary restoreFrom: someRepositories.
+BabySignLanguageDB class >> schema [
+	^ { 
+		BslDictionary }
 ]

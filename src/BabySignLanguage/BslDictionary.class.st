@@ -46,6 +46,11 @@ BslDictionary class >> restoreFrom: aCollection [
 	uniqueInstance := aCollection second.
 ]
 
+{ #category : #persistence }
+BslDictionary class >> spData [
+	^ { BslDictionary study. BslDictionary uniqueInstance }.
+]
+
 { #category : #accessing }
 BslDictionary class >> study [
 	^ study ifNil: [ study := self new ]
