@@ -29,13 +29,13 @@ BslTerm >> alias: anObject [
 BslTerm >> dictionaryUrl [
 	| baseURL |
 	baseURL := 'https://www.babysignlanguage.com/dictionary' asUrl.
-	^ baseURL / self dictionaryWord first asString / self dictionaryWord.
+	^ baseURL / self dictionaryWord.
 ]
 
 { #category : #private }
 BslTerm >> dictionaryWord [
 	dictionaryWord ifNotNil: [ ^ dictionaryWord ].
-	^ self alias ifNil: [ self string copyReplaceAll: ' ' with: '_' ]
+	^ self alias ifNil: [ self string copyReplaceAll: ' ' with: '-' ]
 ]
 
 { #category : #accessing }

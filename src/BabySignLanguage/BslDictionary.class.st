@@ -83,6 +83,16 @@ BslDictionary class >> uniqueInstance: anObject [
 ]
 
 { #category : #accessing }
+BslDictionary >> addTermNamed: aString [
+	| term |
+	term := BslTerm new
+		string: aString; 
+		yourself.
+	^ self terms add: term
+	
+]
+
+{ #category : #accessing }
 BslDictionary >> browse [
 
 	| browser |
