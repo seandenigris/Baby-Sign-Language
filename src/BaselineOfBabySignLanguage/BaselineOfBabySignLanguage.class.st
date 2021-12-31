@@ -4,6 +4,11 @@ Class {
 	#category : #BaselineOfBabySignLanguage
 }
 
+{ #category : #testing }
+BaselineOfBabySignLanguage class >> isDynabook [
+	^ true
+]
+
 { #category : #baselines }
 BaselineOfBabySignLanguage >> baseline: spec [
 	<baseline>
