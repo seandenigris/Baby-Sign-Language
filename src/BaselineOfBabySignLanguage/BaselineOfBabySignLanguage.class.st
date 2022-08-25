@@ -26,7 +26,7 @@ BaselineOfBabySignLanguage >> baseline: spec [
 			baseline: 'SimplePersistence' with: [
 				spec repository: 'github://seandenigris/Simple-Persistence' ];
 			baseline: 'Soup' with: [ 
-				spec repository: 'github://seandenigris/Soup-for-Pharo' ];
+				spec repository: 'github://seandenigris/Soup' ];
 			package: #'BabySignLanguage'  with: [
 				spec requires: #(#'ComputerWorld' #'ExternalWebBrowser' #'FlashcardsSt' #'SimplePersistence' #'Soup' ) ] ]
 ]
