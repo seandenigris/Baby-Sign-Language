@@ -96,7 +96,7 @@ BslTerm >> showDictionary [
 BslTerm >> showUrl: aUrl [
 
 	CwSafari new
-		applescriptTell: 'set bounds of window 1 to {0, 0, 600, 800}'; "from https://apple.stackexchange.com/a/171374/9507"
+		applescriptTellTo: 'set bounds of window 1 to {0, 0, 600, 800}'; "from https://apple.stackexchange.com/a/171374/9507"
 		openInFront: aUrl.
 	
 	"Implementation note: Ideally, we would play the video inside Pharo, but since we don't know how, so we workaround by manually setting up a Safari window where we ant it and sending URLs there."
