@@ -113,14 +113,13 @@ BslDictionary >> browse [
 ]
 
 { #category : #accessing }
-BslDictionary >> gtGtSpotterFor: aStep [
+BslDictionary >> gtGtSpotterFor: aSearch [
 	<gtSearch>
-	^ aStep listProcessor
+	^ aSearch list
 		priority: 5;
 		title: 'Terms';
-		allCandidates: [ self terms ];
-		filter: GtFilterSubstrings;
-		candidatesLimit: 7
+		items: [ self terms ];
+		matchSubstrings
 ]
 
 { #category : #accessing }
