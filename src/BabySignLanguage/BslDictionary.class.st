@@ -113,7 +113,7 @@ BslDictionary >> browse [
 ]
 
 { #category : #accessing }
-BslDictionary >> gtGtSpotterFor: aSearch [
+BslDictionary >> gtSearchTermsFor: aSearch [
 	<gtSearch>
 	^ aSearch list
 		priority: 5;
