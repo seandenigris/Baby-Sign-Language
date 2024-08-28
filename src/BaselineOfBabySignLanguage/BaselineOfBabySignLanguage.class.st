@@ -15,17 +15,17 @@ BaselineOfBabySignLanguage >> baseline: spec [
 
 	spec for: #'common' do: [
 		spec 
-			baseline: 'ComputerWorld' with: [
+			baseline: #'ComputerWorld' with: [
 				spec repository: 'github://seandenigris/Computer-World' ];
-			baseline: 'ExternalWebBrowser' with: [
+			baseline: #'ExternalWebBrowser' with: [
 				spec repository: 'github://seandenigris/Pharo-Web-Browser' ];
-			baseline: 'FlashcardsSt' with: [
+			baseline: #'FlashcardsSt' with: [
 				spec repository: 'github://seandenigris/Flashcards' ];
-			baseline: 'LivingLibrary' with: [
+			baseline: #'LivingLibrary' with: [
 				spec repository: 'github://seandenigris/Living-Library' ];
-			baseline: 'SimplePersistence' with: [
+			baseline: #'SimplePersistence' with: [
 				spec repository: 'github://seandenigris/Simple-Persistence' ];
-			baseline: 'Soup' with: [ 
+			baseline: #'Soup' with: [ 
 				spec repository: 'github://seandenigris/Soup' ];
 			package: #'BabySignLanguage'  with: [
 				spec requires: #(#'ComputerWorld' #'ExternalWebBrowser' #'FlashcardsSt' #'SimplePersistence' #'Soup' ) ] ]
